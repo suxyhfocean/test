@@ -26,9 +26,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- checkout: self
+    clean: true
+
+#- task: CMake@1
+#  inputs:
+#    workingDirectory: 'build'
+
 - task: CMake@1
-  inputs:
-    workingDirectory: 'build'
+  inputs: .
+  workingDirectory: 'build'
 
 - script: |
     make
