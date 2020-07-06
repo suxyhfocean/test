@@ -26,17 +26,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run script'
+- task: CMake@1
+  inputs:
+    workingDirectory: 'build'
 
-- script: mkdir ./build
-  displayName: 'add build path'
-
-- script: cd build
-  displayName: 'build path'
-
-- script: cmake ..
-  displayName: 'run cmake'
-
-- script: make
+- script: |
+    make
   displayName: 'make'
