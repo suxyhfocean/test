@@ -21,7 +21,7 @@ trigger:
 variables:
   configuration: 'Release'
   platform: x64
-  BUILDDIR 'build'
+  BUILDDIR: 'build'
 
 pool:
   vmImage: 'ubuntu-latest'
