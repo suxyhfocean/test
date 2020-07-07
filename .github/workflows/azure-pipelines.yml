@@ -39,4 +39,5 @@ steps:
     cmakeArgs: ..
 
 - script: mkdir $(BUILDDIR)/bin
-- script: make -C $(BUILDDIR) DESTDIR=$(BUILDDIR)/bin install
+- script: make -C $(BUILDDIR)
+- script: cd build && ls
