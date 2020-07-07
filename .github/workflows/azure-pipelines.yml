@@ -32,7 +32,10 @@ steps:
 #    make
 #  displayName: 'make'
 
-- script: cmake .
+- task: CMake@1
+  inputs:
+    workingDirectory: 'build'
+    cmakeArgs: .
 
 - script: ls
 - script: cd build && ls
