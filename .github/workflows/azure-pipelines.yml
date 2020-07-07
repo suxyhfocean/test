@@ -21,6 +21,7 @@ trigger:
 variables:
   configuration: 'Release'
   platform: x64
+  BUILDDIR 'build'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -34,8 +35,8 @@ steps:
 
 - task: CMake@1
   inputs:
-    workingDirectory: 'build'
+    workingDirectory: $(BUILDDIR)
     cmakeArgs: ..
 
-- script: ls
-- script: cd build && ls
+- script: mkdir $(BUILDDIR)/bin
+- script: make -C $(BUILDDIR) DESTDIR=$(BUILDDIR)/bin install
