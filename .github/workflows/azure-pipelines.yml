@@ -28,12 +28,11 @@ pool:
 steps:
 - checkout: self
 
-- task: CMake@1
-  inputs:
-    workingDirectory: 'build'
-
 #- script: |
 #    make
 #  displayName: 'make'
 
+- script: cmake .
+
 - script: ls
+- script: cd build && ls
