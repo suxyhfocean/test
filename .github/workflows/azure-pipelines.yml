@@ -27,7 +27,6 @@ pool:
 
 steps:
 - checkout: self
-    clean: true
 
 - task: CMake@1
   inputs:
